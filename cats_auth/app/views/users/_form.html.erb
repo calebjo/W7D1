@@ -1,0 +1,32 @@
+<%# make action dynamic %>
+<%# Make method dynamic %>
+<%# Make values dynamic %>
+<% if type == :new %>
+    <% action_url = users_url %>
+    <% button_text = "Create User" %>
+<% elsif type == :edit %>
+    <% action_url = user_url(user) %>
+    <% button_text = "Update User" %>
+<% end %>
+
+
+<form action="<%= action_url %>" method="POST">
+    <% if type == :edit %>
+        <input type="hidden" name="_method" value="PATCH">
+    <% end %>
+    <label for="username"> username </label>
+
+    <input id="username" type="text" name="user[username]" value="<%= user.username %>">
+
+    <% if type == :new %>
+        <label for="password"> password </label>
+        <input id="password" type="password" name="user[password]" value="">
+    <% end %>
+
+
+    <label for="age"> age </label>
+    <input id="age" type="text" name="user[age]" value="<%= user.age %>">
+
+    <input type="submit" value="<%= button_text %>">
+
+</form>
