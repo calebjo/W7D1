@@ -16,16 +16,12 @@
     <% end %>
     <label for="username"> username </label>
 
-    <input id="username" type="text" name="user[username]" value="<%= user.username %>">
+    <input id="username" type="text" name="user[username]" value="">
 
     <% if type == :new %>
         <label for="password"> password </label>
         <input id="password" type="password" name="user[password]" value="">
     <% end %>
-
-
-    <label for="age"> age </label>
-    <input id="age" type="text" name="user[age]" value="<%= user.age %>">
 
     <input type="submit" value="<%= button_text %>">
 
