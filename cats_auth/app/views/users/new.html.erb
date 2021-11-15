@@ -1,0 +1,10 @@
+<h1> Signup form</h1>
+
+<!--form action="<%= users_url %>" method="POST">
+    <label for="username"> username </label>
+    <input id="username" type="text" name="user[username]" value="">
+
+    <input type="submit" value="Create User">
+</form-->
+
+<%= render "form", user: @user, type: :new %>

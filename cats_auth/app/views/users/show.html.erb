@@ -1,0 +1,13 @@
+<h1> Here is our user, <%= @user.username %></h1>
+
+
+<%= render "user", user: @user %>
+
+<li><a href="<%= edit_user_url(@user) %>">Edit user</a></li>
+
+<li>
+    <form action="<%= user_url(@user)%>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Delete User">
+    </form>
+</li>
